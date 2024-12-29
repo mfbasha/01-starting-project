@@ -1,0 +1,33 @@
+<div class="table-responsive container mt-5">
+  <table class="table table-bordered table-striped table-hover">
+    <thead class="thead-dark">
+      <tr>
+        <th>Year</th>
+        <th>Interest Rate</th>
+        <th>Value End of Year</th>
+        <th>Annual Investment</th>
+        <th>Total Interests</th>
+        <th>Total Amount Invested</th>
+      </tr>
+    </thead>
+    <tbody>
+      @for(item of investmentData();track item.year) {
+        <tr>
+          <td>{{ item.year }}</td>
+          <td>{{ item.interest | percent }}</td>
+          <td>{{ item.annualInvestment | currency }}</td>
+          <td>{{ item.totalInterest | currency }}</td>
+          <td>{{ item.totalAmountInvested | currency }}</td>
+        </tr>
+      }
+      <!-- <tr *ngFor="let item of investmentData">
+        <td>{{ item.year }}</td>
+        <td>{{ item.interest }}%</td>
+        <td>{{ item.endValue | currency }}</td>
+        <td>{{ item.annualInvestment | currency }}</td>
+        <td>{{ item.totalInvestment | currency }}</td>
+        <td>{{ item.totalAmountInvested | currency }}</td>
+      </tr> -->
+    </tbody>
+  </table>
+</div>

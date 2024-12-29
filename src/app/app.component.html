@@ -1,0 +1,5 @@
+<app-header></app-header>
+<app-user-input (investmentAdded)="addInvestment($event)"></app-user-input>
+<div class="container">
+  <app-show-results [investmentData]="investmentResult()"></app-show-results>
+</div>
